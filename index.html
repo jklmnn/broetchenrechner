@@ -6,10 +6,10 @@
         <title>Brötchenrechner</title>
 
         <!-- Bootstrap core CSS -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
         <!-- Custom styles for this template -->
-        <link href="signin.css" rel="stylesheet">
-        <link href="sticky-footer.css" rel="stylesheet">
+        <link href="css/signin.css" rel="stylesheet">
+        <link href="css/sticky-footer.css" rel="stylesheet">
     </head>
     <body class="text-center">
         <form class="form-signin">
@@ -32,14 +32,17 @@
                 <span class="text-muted"><a href="https://github.com/jklmnn/broetchenrechner">GitHub</a></span>
             </div>
         </footer>
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script>
-            $('#button-calc').on('click', function(e){
-                count = $('#pplcount')[0].valueAsNumber;
-                count = Math.floor(count * 2 - count / 4)
+            var buttonCalc = document.getElementById("button-calc");
+            
+            buttonCalc.onclick = function(e){
+                var pplcount = document.getElementById("pplcount").valueAsNumber;
+                var breadcount = document.getElementById("breadcount");
+
+                count = Math.floor(pplcount * 2 - pplcount / 4)
                 console.log(count)
-                $('#breadcount').attr("placeholder", count);
-            });
+                breadcount.placeholder = count;
+            };
         </script>
     </body>
 </html>
